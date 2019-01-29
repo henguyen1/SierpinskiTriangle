@@ -1,10 +1,10 @@
 public void setup()
 {
-	size(400,400);
+	size(800,800);
 }
 public void draw()
 {	
-	triangle(200,200,300,200,250,(int)(200+(Math.sqrt(3))/2*100));
+	sierpinski(400,400,500);
 }
 public void mouseDragged()//optional
 {
@@ -12,5 +12,12 @@ public void mouseDragged()//optional
 }
 public void sierpinski(int x, int y, int len) 
 {
-	
+	if(len <= 20)
+	{
+		triangle(x,y,x+len,y,x+(((x+len)-x)/2),y-len);
+	}
+	else 
+	{
+		triangle(x,y,x+len/2,y,x+len/4,y-len/2);
+	}
 }
